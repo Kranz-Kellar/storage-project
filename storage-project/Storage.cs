@@ -9,6 +9,7 @@ namespace storage_project
     public class Storage
     {
         private List<Item> items;
+        private List<Supplier> suppliers;
         private int maxWeight;
         private int currentWeight;
         private int maxVolume;
@@ -21,6 +22,7 @@ namespace storage_project
             this.currentWeight = 0;
             this.currentVolume = 0;
             this.items = new List<Item>();
+            this.suppliers = new List<Supplier>();
         }
 
         public int GetMaxWeight() => maxWeight;
@@ -46,6 +48,12 @@ namespace storage_project
             this.currentWeight = newWeight;
             this.currentVolume = newVolume;
             return $"Товар {item.Name} успешно добавлен на склад.";
+        }
+
+        public string AddNewSupplier(Supplier supplier)
+        {
+            this.suppliers.Add(supplier);
+            return $"Поставщик {supplier.Name} успешно добавлен.";
         }
 
         public List<Item> GetItemsBySupplier(Supplier supplier)

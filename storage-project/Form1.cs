@@ -10,11 +10,20 @@ using System.Windows.Forms;
 
 namespace storage_project
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        Storage storage;
+        public MainForm()
         {
             InitializeComponent();
+
+            storage = new Storage(1000, 1000000);
+        }
+
+        private void addNewItem_Click(object sender, EventArgs e)
+        {
+            AddNewItemForm form = new AddNewItemForm(storage);
+            form.ShowDialog();
         }
     }
 }
