@@ -12,18 +12,23 @@ namespace storage_project
 {
     public partial class MainForm : Form
     {
-        Storage storage;
+       
         public MainForm()
         {
             InitializeComponent();
 
-            storage = new Storage(1000, 1000000);
+           
         }
 
         private void addNewItem_Click(object sender, EventArgs e)
         {
-            AddNewItemForm form = new AddNewItemForm(storage);
+            NewStorageEntry form = new NewStorageEntry();
             form.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,6 +1,9 @@
-﻿namespace storage_project
+﻿
+using System.Windows.Forms;
+
+namespace storage_project
 {
-    partial class Storage
+    partial class Storage : Form
     {
         /// <summary>
         /// Required designer variable.

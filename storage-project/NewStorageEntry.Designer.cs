@@ -33,18 +33,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.itemName = new System.Windows.Forms.TextBox();
+            this.itemCode = new System.Windows.Forms.TextBox();
+            this.itemWeight = new System.Windows.Forms.TextBox();
+            this.itemVolume = new System.Windows.Forms.TextBox();
+            this.endOfItemStoraging = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.itemOwner = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.itemNumberOfRack = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -93,40 +93,40 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Объём товара";
             // 
-            // textBox1
+            // itemName
             // 
-            this.textBox1.Location = new System.Drawing.Point(146, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.itemName.Location = new System.Drawing.Point(146, 72);
+            this.itemName.Name = "itemName";
+            this.itemName.Size = new System.Drawing.Size(100, 20);
+            this.itemName.TabIndex = 5;
             // 
-            // textBox2
+            // itemCode
             // 
-            this.textBox2.Location = new System.Drawing.Point(146, 111);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
+            this.itemCode.Location = new System.Drawing.Point(146, 111);
+            this.itemCode.Name = "itemCode";
+            this.itemCode.Size = new System.Drawing.Size(100, 20);
+            this.itemCode.TabIndex = 6;
             // 
-            // textBox3
+            // itemWeight
             // 
-            this.textBox3.Location = new System.Drawing.Point(146, 151);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
+            this.itemWeight.Location = new System.Drawing.Point(146, 151);
+            this.itemWeight.Name = "itemWeight";
+            this.itemWeight.Size = new System.Drawing.Size(100, 20);
+            this.itemWeight.TabIndex = 7;
             // 
-            // textBox4
+            // itemVolume
             // 
-            this.textBox4.Location = new System.Drawing.Point(146, 186);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 8;
+            this.itemVolume.Location = new System.Drawing.Point(146, 186);
+            this.itemVolume.Name = "itemVolume";
+            this.itemVolume.Size = new System.Drawing.Size(100, 20);
+            this.itemVolume.TabIndex = 8;
             // 
-            // dateTimePicker1
+            // endOfItemStoraging
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(146, 223);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.endOfItemStoraging.Location = new System.Drawing.Point(146, 223);
+            this.endOfItemStoraging.Name = "endOfItemStoraging";
+            this.endOfItemStoraging.Size = new System.Drawing.Size(200, 20);
+            this.endOfItemStoraging.TabIndex = 9;
             // 
             // label6
             // 
@@ -145,12 +145,12 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "Владелец";
             // 
-            // textBox5
+            // ItemOwner
             // 
-            this.textBox5.Location = new System.Drawing.Point(146, 324);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 12;
+            this.itemOwner.Location = new System.Drawing.Point(146, 324);
+            this.itemOwner.Name = "ItemOwner";
+            this.itemOwner.Size = new System.Drawing.Size(100, 20);
+            this.itemOwner.TabIndex = 12;
             // 
             // button1
             // 
@@ -171,6 +171,7 @@
             this.button2.TabIndex = 14;
             this.button2.Text = "Ввести товар в базу";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label8
             // 
@@ -181,12 +182,12 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Номер полки";
             // 
-            // textBox6
+            // itemNumberOfRack
             // 
-            this.textBox6.Location = new System.Drawing.Point(146, 267);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 16;
+            this.itemNumberOfRack.Location = new System.Drawing.Point(146, 267);
+            this.itemNumberOfRack.Name = "itemNumberOfRack";
+            this.itemNumberOfRack.Size = new System.Drawing.Size(100, 20);
+            this.itemNumberOfRack.TabIndex = 16;
             // 
             // NewStorageEntry
             // 
@@ -195,18 +196,18 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.ControlBox = false;
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.itemNumberOfRack);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.itemOwner);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.endOfItemStoraging);
+            this.Controls.Add(this.itemVolume);
+            this.Controls.Add(this.itemWeight);
+            this.Controls.Add(this.itemCode);
+            this.Controls.Add(this.itemName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -226,17 +227,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox itemName;
+        private System.Windows.Forms.TextBox itemCode;
+        private System.Windows.Forms.TextBox itemWeight;
+        private System.Windows.Forms.TextBox itemVolume;
+        private System.Windows.Forms.DateTimePicker endOfItemStoraging;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox itemOwner;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox itemNumberOfRack;
     }
 }

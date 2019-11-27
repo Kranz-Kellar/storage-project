@@ -6,23 +6,24 @@ using System.Threading.Tasks;
 
 namespace storage_project
 {
-    public class Storage
+    public class Rack
     {
+        private int id;
         private List<Item> items;
-        private List<Supplier> suppliers;
         private int maxWeight;
         private int currentWeight;
         private int maxVolume;
         private int currentVolume;
 
-        public Storage(int maxWeight, int maxVolume)
+        public int Id { get => id; set => id = value; }
+
+        public Rack(int id, int maxWeight, int maxVolume)
         {
             this.maxWeight = maxWeight;
             this.maxVolume = maxVolume;
             this.currentWeight = 0;
             this.currentVolume = 0;
             this.items = new List<Item>();
-            this.suppliers = new List<Supplier>();
         }
 
         public int GetMaxWeight() => maxWeight;
@@ -50,13 +51,7 @@ namespace storage_project
             return $"Товар {item.Name} успешно добавлен на склад.";
         }
 
-        public string AddNewSupplier(Supplier supplier)
-        {
-            this.suppliers.Add(supplier);
-            return $"Поставщик {supplier.Name} успешно добавлен.";
-        }
-
-        public List<Item> GetItemsBySupplier(Supplier supplier)
+        public List<Item> GetItemsBySupplier(string supplier)
         {
             return this.items.FindAll(x => supplier == x.Supplier);
         }
@@ -65,5 +60,7 @@ namespace storage_project
         {
             return this.items.Find(x => id == x.Id);
         }
+
+        public List<Item> GetAllItems() => items;
     }
 }

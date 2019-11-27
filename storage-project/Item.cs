@@ -8,27 +8,35 @@ namespace storage_project
 {
     public class Item
     {
-        private int id;
+        private int itemCode;
         private string name;
-        private int amount;
         private int weight;
         private int volume;
-        private Supplier supplier;
+        private string supplier;
+        private int numberOfRack;
+        private DateTime dateOfStartOfStoraging;
+        private DateTime dateOfEndOfStoraging;
 
-        public Item(int id, string name, int amount, int weight, int volume)
+        public Item(int itemCode, string name, int weight, int volume,
+            string supplier, int numberOfRack, DateTime dateOfStartOfStoraging, DateTime dateOfEndOfStoraging)
         {
-            this.id = id;
+            this.itemCode = itemCode;
             this.name = name;
-            this.amount = amount;
             this.weight = weight;
             this.volume = volume;
+            this.supplier = supplier;
+            this.numberOfRack = numberOfRack;
+            this.dateOfStartOfStoraging = dateOfStartOfStoraging;
+            this.dateOfEndOfStoraging = dateOfEndOfStoraging;
         }
 
-        public int Id { get => id; set => id = value; }
+        public int Id { get => itemCode; set => itemCode = value; }
         public string Name { get => name; set => name = value; }
-        public int Amount { get => amount; set => amount = value; }
         public int Weight { get => weight; set => weight = value; }
         public int Volume { get => volume; set => volume = value; }
-        public Supplier Supplier { get => supplier; set => supplier = value; }
+        public string Supplier { get => supplier; set => supplier = value; }
+        public int NumberOfRack { get => numberOfRack; set => numberOfRack = value; }
+        public DateTime DateOfStartOfStoraging { get => dateOfStartOfStoraging; set => dateOfStartOfStoraging = value; }
+        public DateTime DateOfEndOfStoraging { get => dateOfEndOfStoraging; set => dateOfEndOfStoraging = value; }
     }
 }
