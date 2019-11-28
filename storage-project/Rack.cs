@@ -17,7 +17,7 @@ namespace storage_project
 
         public int Id { get => id; set => id = value; }
 
-        public Rack(int id, int maxWeight, int maxVolume)
+        public Rack(int id, int maxWeight, int maxVolume, int currentWeight, int currentVolume)
         {
             this.maxWeight = maxWeight;
             this.maxVolume = maxVolume;
@@ -25,6 +25,8 @@ namespace storage_project
             this.currentVolume = 0;
             this.items = new List<Item>();
             this.id = id;
+            this.currentWeight = currentWeight;
+            this.currentVolume = currentVolume;
         }
 
         public int GetMaxWeight() => maxWeight;
@@ -51,7 +53,17 @@ namespace storage_project
             this.items.Add(item);
             this.currentWeight = newWeight;
             this.currentVolume = newVolume;
+            DatabaseHandler.AddItem(item);
             return $"Товар {item.Name} успешно добавлен на склад.";
+        }
+
+        public void AddOldItemFromDatabase(Item item)
+        {
+            int newWeight = currentWeight + item.Weight;
+            int newVolume = currentVolume + item.Volume;
+            this.items.Add(item);
+            this.currentWeight = newWeight;
+            this.currentVolume = newVolume;
         }
 
         public List<Item> GetItemsBySupplier(string supplier)
@@ -61,7 +73,7 @@ namespace storage_project
 
         public Item GetItemById(int id)
         {
-            return this.items.Find(x => id == x.Id);
+            return this.items.Find(x => id == x.ItemCode);
         }
 
         public List<Item> GetAllItems() => items;

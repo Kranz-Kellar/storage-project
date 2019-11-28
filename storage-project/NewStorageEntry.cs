@@ -39,7 +39,7 @@ namespace storage_project
                 int numberOfRack = StringToInt(itemNumberOfRack.Text);
                 string owner = itemOwner.Text;
 
-                return new Item(code, name, weight, volume, owner, numberOfRack, DateTime.Now, endOfItemStorage);
+                return new Item(0, code, name, weight, volume, owner, numberOfRack, DateTime.Now, endOfItemStorage);
             }
             catch(Exception ex)
             {
@@ -50,8 +50,7 @@ namespace storage_project
 
         private int StringToInt(string text)
         {
-            int result;
-            if(int.TryParse(text, out result))
+            if (int.TryParse(text, out int result))
             {
                 return result;
             }

@@ -8,6 +8,7 @@ namespace storage_project
 {
     public class Item
     {
+        private int id;
         private int itemCode;
         private string name;
         private int weight;
@@ -17,9 +18,10 @@ namespace storage_project
         private DateTime dateOfStartOfStoraging;
         private DateTime dateOfEndOfStoraging;
 
-        public Item(int itemCode, string name, int weight, int volume,
+        public Item(int id, int itemCode, string name, int weight, int volume,
             string supplier, int numberOfRack, DateTime dateOfStartOfStoraging, DateTime dateOfEndOfStoraging)
         {
+            this.id = id;
             this.itemCode = itemCode;
             this.name = name;
             this.weight = weight;
@@ -30,7 +32,8 @@ namespace storage_project
             this.dateOfEndOfStoraging = dateOfEndOfStoraging;
         }
 
-        public int Id { get => itemCode; set => itemCode = value; }
+        public int Id { get => id; }
+        public int ItemCode { get => itemCode; set => itemCode = value; }
         public string Name { get => name; set => name = value; }
         public int Weight { get => weight; set => weight = value; }
         public int Volume { get => volume; set => volume = value; }
@@ -38,5 +41,6 @@ namespace storage_project
         public int NumberOfRack { get => numberOfRack; set => numberOfRack = value; }
         public DateTime DateOfStartOfStoraging { get => dateOfStartOfStoraging; set => dateOfStartOfStoraging = value; }
         public DateTime DateOfEndOfStoraging { get => dateOfEndOfStoraging; set => dateOfEndOfStoraging = value; }
+        
     }
 }

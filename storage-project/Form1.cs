@@ -16,8 +16,7 @@ namespace storage_project
         public MainForm()
         {
             InitializeComponent();
-            Rack rack = new Rack(1, 10000, 100000);
-            StorageHandler.AddRack(rack);
+            StorageHandler.Init();
         }
 
         private void addNewItem_Click(object sender, EventArgs e)
@@ -28,7 +27,9 @@ namespace storage_project
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            AllItemsView form = new AllItemsView();
+            form.ShowDialog();
         }
+
     }
 }
