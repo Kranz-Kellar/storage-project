@@ -121,5 +121,26 @@ namespace storage_project
             rack.DeleteItemById(itemId);
             DatabaseHandler.DeleteItem(itemId);
         }
+
+        static public List<Item> GetAllItemsForFileWritter()
+        {
+            var itemsTable = DatabaseHandler.GetAllItems();
+            List<Item> items = new List<Item>();
+            for (int i = 0; i < itemsTable.Rows.Count; i++)
+            {
+                Item item = new Item(Convert.ToInt32(itemsTable.Rows[i]["id"]),
+                                     Convert.ToInt32(itemsTable.Rows[i]["code"]),
+                                     itemsTable.Rows[i]["name"].ToString(),
+                                     Convert.ToInt32(itemsTable.Rows[i]["weight"]),
+                                     Convert.ToInt32(itemsTable.Rows[i]["volume"]),
+                                     itemsTable.Rows[i]["supplier"].ToString(),
+                                     Convert.ToInt32(itemsTable.Rows[i]["numberOfRack"]),
+                                     Convert.ToDateTime(itemsTable.Rows[i]["startOfStorage"]),
+                                     Convert.ToDateTime(itemsTable.Rows[i]["endOfStorage"]));
+                  items.Add(item);
+            }
+
+            return items;
+        }
     }
 }

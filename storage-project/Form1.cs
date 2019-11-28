@@ -33,7 +33,7 @@ namespace storage_project
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            FileWritter.WriteItemsToFile(StorageHandler.GetAllItemsForFileWritter());
         }
     }
 }
