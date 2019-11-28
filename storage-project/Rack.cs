@@ -24,10 +24,13 @@ namespace storage_project
             this.currentWeight = 0;
             this.currentVolume = 0;
             this.items = new List<Item>();
+            this.id = id;
         }
 
         public int GetMaxWeight() => maxWeight;
         public int GetMaxVolume() => maxVolume;
+        public int GetCurrentWeight() => currentWeight;
+        public int GetCurrentVolume() => currentVolume;
         public void SetMaxWeight(int newMaxWeight) => maxWeight = newMaxWeight;
         public void SetMaxVolume(int newMaxVolume) => maxVolume = newMaxVolume;
 

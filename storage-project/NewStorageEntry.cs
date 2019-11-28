@@ -19,23 +19,33 @@ namespace storage_project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CreateNewItem();
+            Item newItem = CreateNewItem();
+            if (newItem != null)
+            {
+                string resultMessage = StorageHandler.AddItemOnRack(newItem.NumberOfRack, newItem);
+                MessageBox.Show(resultMessage);
+            }
         }
 
         private Item CreateNewItem()
         {
-            string name = itemName.Text;
-            string code = itemCode.Text;
-            string weight = itemWeight.Text;
-            string volume = itemVolume.Text;
-            DateTime endOfItemStorage = endOfItemStoraging.Value;
-            string numberOfRack = itemNumberOfRack.Text;
-            string owner = itemOwner.Text;
+            try
+            {
+                string name = itemName.Text;
+                int code = StringToInt(itemCode.Text);
+                int weight = StringToInt(itemWeight.Text);
+                int volume = StringToInt(itemVolume.Text);
+                DateTime endOfItemStorage = endOfItemStoraging.Value;
+                int numberOfRack = StringToInt(itemNumberOfRack.Text);
+                string owner = itemOwner.Text;
 
-            return new Item(StringToInt(code), name, StringToInt(weight),
-                StringToInt(volume), owner,
-                StringToInt(numberOfRack),
-                DateTime.Now, endOfItemStorage);
+                return new Item(code, name, weight, volume, owner, numberOfRack, DateTime.Now, endOfItemStorage);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
         }
 
         private int StringToInt(string text)
@@ -49,6 +59,9 @@ namespace storage_project
             throw new Exception("Введено неверное значение");
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -145,10 +145,10 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "Владелец";
             // 
-            // ItemOwner
+            // itemOwner
             // 
             this.itemOwner.Location = new System.Drawing.Point(146, 324);
-            this.itemOwner.Name = "ItemOwner";
+            this.itemOwner.Name = "itemOwner";
             this.itemOwner.Size = new System.Drawing.Size(100, 20);
             this.itemOwner.TabIndex = 12;
             // 
@@ -161,6 +161,7 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "Назад";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
