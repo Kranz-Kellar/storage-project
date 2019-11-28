@@ -112,6 +112,7 @@
       <DependentUpon>AllItemsView.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseHandler.cs" />
+    <Compile Include="FileWritter.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

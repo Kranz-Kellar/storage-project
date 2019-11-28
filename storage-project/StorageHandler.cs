@@ -106,6 +106,7 @@ namespace storage_project
             {
                 return;
             }
+            racks.Find(x => item.NumberOfRack == x.Id).UpdateItem(item);
             //TODO Get item from rack and update it locally
             DatabaseHandler.UpdateItem(item);
         }
@@ -116,7 +117,8 @@ namespace storage_project
             {
                 return;
             }
-
+            var rack = racks.Find(x => x.GetAllItems().Find(y => y.Id == itemId) != null);
+            rack.DeleteItemById(itemId);
             DatabaseHandler.DeleteItem(itemId);
         }
     }

@@ -56,7 +56,7 @@ namespace storage_project
         {
             try
             {
-                Item item = new Item(currentSelectedItemId, Convert.ToInt32(itemCode.Text), itemName.Text, Convert.ToInt32(itemWeight.Text),
+                var item = new Item(currentSelectedItemId, Convert.ToInt32(itemCode.Text), itemName.Text, Convert.ToInt32(itemWeight.Text),
                     Convert.ToInt32(itemVolume.Text),
                     itemSupplier.Text, Convert.ToInt32(itemNumberOfRack.Text),
                     Convert.ToDateTime(itemStartDateStoraging.Text), Convert.ToDateTime(itemEndDateStoraging.Text));
@@ -71,10 +71,27 @@ namespace storage_project
 
         private void button3_Click(object sender, EventArgs e)
         {
-            StorageHandler.DeleteItem(currentSelectedItemId);
 
-            currentSelectedItemId = -1;
-            this.dataGridView1.DataSource = StorageHandler.GetAllItemsForDataGridView();
+            try
+            {
+                
+                StorageHandler.DeleteItem(currentSelectedItemId);
+
+                currentSelectedItemId = -1;
+                this.dataGridView1.DataSource = StorageHandler.GetAllItemsForDataGridView();
+            }
+            catch(Exception)
+            {
+                
+            }
+        }
+
+        private Item CreateItemFromInputBoxes()
+        {
+            return new Item(currentSelectedItemId, Convert.ToInt32(itemCode.Text), itemName.Text, Convert.ToInt32(itemWeight.Text),
+                    Convert.ToInt32(itemVolume.Text),
+                    itemSupplier.Text, Convert.ToInt32(itemNumberOfRack.Text),
+                    Convert.ToDateTime(itemStartDateStoraging.Text), Convert.ToDateTime(itemEndDateStoraging.Text));
         }
     }
 }

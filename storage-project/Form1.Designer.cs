@@ -31,6 +31,7 @@
             this.addNewItem = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // addNewItem
@@ -65,12 +66,23 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Система учёта складского помещения";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(284, 345);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(217, 126);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Выгрузить данные о товарах в текстовый файл";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.addNewItem);
@@ -88,6 +100,7 @@
         private System.Windows.Forms.Button addNewItem;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

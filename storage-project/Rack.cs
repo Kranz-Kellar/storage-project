@@ -76,6 +76,17 @@ namespace storage_project
             return this.items.Find(x => id == x.ItemCode);
         }
 
+        public void DeleteItemById(int id)
+        {
+            items.RemoveAll(x => x.Id == id);
+        }
+
+        public void UpdateItem(Item item)
+        {
+
+            items[items.FindIndex(x => x.Id == item.Id)] = item;
+        }
+
         public List<Item> GetAllItems() => items;
     }
 }
