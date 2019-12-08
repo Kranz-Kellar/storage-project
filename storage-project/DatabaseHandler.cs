@@ -87,6 +87,28 @@ namespace storage_project
             }
         }
 
+        static public DataTable GetAllItemsOfSupplier(string supplier)
+        {
+            if (!IsDatabaseExists())
+            {
+                RestoreDatabase();
+            }
+
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                string commandText = $"SELECT * FROM Item where supplier = '{supplier}'";
+                var adapter = new SQLiteDataAdapter(commandText, connection);
+
+                using (var dataTable = new DataTable())
+                {
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+
+            }
+        }
+
         static private DataTable GetAllDataFromTable(string tableName)
         {
             if (!IsDatabaseExists())
